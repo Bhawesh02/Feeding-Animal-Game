@@ -23,7 +23,6 @@ public class DestroyOutOfBound : MonoBehaviour
         else if (transform.position.z < bellowBound)
         {
             PlayerController.playerLives -= 1;
-            Debug.Log("Lives = " + PlayerController.playerLives);
 
             Destroy(gameObject);
         }

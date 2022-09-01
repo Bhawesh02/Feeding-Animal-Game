@@ -12,15 +12,15 @@ public class PlayerController : MonoBehaviour
     private float zRangeTop = 10.0f;
     private float zRangeBottom = 0;
     private float projectionDistFromPlayer = 1.5f;
-    public static int playerLives = 3;
+    public static int playerLives = 5;
     public static int playerScore = 0;
     public GameObject projectilePrefab;
+    public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("Lives = " + playerLives);
-        Debug.Log("Score = " + playerScore);
+        healthBar.SetMaxHealth(playerLives);
     }
 
     // Update is called once per frame
@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Game Over");
         }
+
+        healthBar.SetHealth(playerLives);
+        healthBar.transform.position = new Vector3(transform.position.x + 0.09f, transform.position.y + 3.655f, transform.position.z + -0.5f);
         // Left-Right Boundary
         if (Mathf.Abs(transform.position.x) > xRange)
         {
@@ -68,6 +71,5 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         playerLives -= 1;
-        Debug.Log("Lives = "+playerLives);
     }
 }
