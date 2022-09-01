@@ -26,8 +26,12 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerLives == 0)
+        {
+            Debug.Log("Game Over");
+        }
         // Left-Right Boundary
-        if(Mathf.Abs(transform.position.x) > xRange)
+        if (Mathf.Abs(transform.position.x) > xRange)
         {
             float leftOrRight = transform.position.x / (Mathf.Abs(transform.position.x));
             transform.position = new Vector3(xRange * leftOrRight, transform.position.y, transform.position.z);
@@ -58,10 +62,7 @@ public class PlayerController : MonoBehaviour
             //Fire
             Instantiate(projectilePrefab, projectilePos , projectilePrefab.transform.rotation);
         }
-        if (playerLives == 0)
-        {
-            Debug.Log("Game Over");
-        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
