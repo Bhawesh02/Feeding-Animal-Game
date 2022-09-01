@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,5 +20,7 @@ public class DetectCollision : MonoBehaviour
     {
         Destroy(other.gameObject);
         Destroy(gameObject);
+        PlayerController.playerScore += 1;
+        Debug.Log("Score = " + PlayerController.playerScore);
     }
 }
