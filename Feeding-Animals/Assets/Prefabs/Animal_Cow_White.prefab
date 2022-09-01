@@ -2022,6 +2022,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 661672900}
+  Canvas: {fileID: 746502932}
 --- !u!1 &7298873019353689815
 GameObject:
   m_ObjectHideFlags: 0

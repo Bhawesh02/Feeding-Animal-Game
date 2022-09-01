@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AnimalHealthBar : MonoBehaviour
 {
@@ -10,6 +11,11 @@ public class AnimalHealthBar : MonoBehaviour
     void Start()
     {
         healthBar.SetMaxHealth(animalHealth);
+    }
+
+    void Update()
+    {
+    
     }
 
     private void OnTriggerEnter(Collider other)
